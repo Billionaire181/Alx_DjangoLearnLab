@@ -14,7 +14,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='relationship_app/login.html'), name='login'),
 
     # Logout view
-    path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='login'), name='logout'),
 
     # Registration view (custom view)
     path('register/', views.register, name='register'),
