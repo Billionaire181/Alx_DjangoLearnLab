@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+
 
 # Create your views here.
 from .models import Book 
@@ -13,6 +16,7 @@ class LibraryDetailView(DetailView):
 	model = Library
 	template_name = 'relationship_app/library_detail.html'
 	context_object_name = 'library'
- 
-from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+	
+
+form = UserCreationForm()
+return render(request, 'relationship_app/register.html', {'form': form})
