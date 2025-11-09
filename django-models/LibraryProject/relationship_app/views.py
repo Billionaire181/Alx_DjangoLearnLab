@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from .models import Book 
-def Book_list(request):
+def List_books(request):
 	books = Book.objects.all()
 	return render (request, 'relationship_app/book_list.html', {'books' : books} )
 
